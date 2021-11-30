@@ -2,39 +2,21 @@
 session_start();
 	
 require_once('configuration.php');
-
 	$sesslogin = $_SESSION["login"];
-
 	$req= mysqli_query($bdd, "SELECT * FROM utilisateurs WHERE login = '$sesslogin'");
-
 	$res= mysqli_fetch_all($req,MYSQLI_ASSOC);
-
 	$login = $res[0]['login'];
-
 	$prenom = $res[0]['prenom'];
-
 	$nom = $res[0]['nom'];
-
 	$password = $res[0]['password']; 
 
 
+    $fetch = mysqli_query ($bdd, "SELECT password FROM utilisateurs WHERE login = '$sesslogin'");
+    $fet = mysqli_fetch_all($fetch);
+    $actuel = $fet[0][0];
 
-if (isset($_POST['submitBtn']))
-{
-    $nom10 = $_POST['nom'];
+    $post = hash('sha256' , $_POST['password']);
 
-    $prenom10 = $_POST['prenom'];
-
-    $password10 = $_POST['passwordChange'];
-    
-    $login10 = $_POST['login'];
-
-	$requete = "UPDATE utilisateurs SET login='$login10', prenom='$prenom10', nom='$nom10', password= '".hash('sha256', $password10)."' WHERE  login = '$sesslogin' ";
-    
-
-	$req2= mysqli_query($bdd, $requete);
-	
-}
 
 ?>
 
@@ -43,7 +25,7 @@ if (isset($_POST['submitBtn']))
 	<head>
 		<meta charset="utf-8">
         <link rel="stylesheet" href="../css/moduleconnexion.css">
-		<title></title>
+		<title>Vente Privée - profil</title>
 	</head>
 	
 	<body>
@@ -82,11 +64,37 @@ if (isset($_POST['submitBtn']))
 					<input type="password" name="passwordChange"/>
 				</div>				
 
-				<a class="aaa" href='../index.php'> Accueil</a>
+				<a class="aaa" href='index.php'> Accueil</a>
 				<input type="submit" value="Edit" name="submitBtn" />
 			</div>
 			</form>
 		</div>
+        
 	</body>
 	
 </html>
+<?php
+
+
+if (isset($_POST['password'])) {
+        
+        if ($post === $actuel)  {
+            if (isset($_POST['submitBtn'])) {
+                $nom10 = $_POST['nom'];
+                $prenom10 = $_POST['prenom'];
+                $password10 = $_POST['passwordChange'];
+                $login10 = $_POST['login'];
+                $lastpass = $_POST['password']; 
+                $requete = "UPDATE utilisateurs SET login='$login10', prenom='$prenom10', nom ='$nom10', password= '".hash('sha256', $password10)."' WHERE  login = '$sesslogin' and password = '".hash('sha256' , $lastpass)."'";
+        
+    
+                $req2= mysqli_query($bdd, $requete);
+    
+        
+            }
+        } 
+        else {
+        echo "ERREUR = Le mot de passe est inconnue." ; 
+        }
+    }
+?>    
