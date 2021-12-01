@@ -8,5 +8,4 @@ $bdd = mysqli_connect('localhost', 'root' , '' , 'moduleconnexion');
 if ($bdd === false) {
     die("Erreur : La connexion à la base de données à échouer." . mysqli_connect_error());
 }
-
 ?>
