@@ -1,3 +1,151 @@
 * {
-    background-color: thistle; 
+    margin : 0%;
+}
+.formulaire {
+    max-width: 25%; 
+    margin-left : 37.5%;
+    margin-top : 5%;
+    padding : 2%;
+    box-shadow: navy 10px 10px 20px;
+    border-radius: 2% 2% 2% 2%;
+}
+input {
+    display: flex;
+    align-items: center;
+    margin : 5%;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+label {
+    color: navy;
+}
+
+
+header {
+    display: flex;
+    background-color: navy;
+    position: relative;
+    z-index: 99;
+    flex-direction:row-reverse;
+    height : 10%;
+}
+nav{
+    width: 50%;
+    margin: 0 auto;
+    background-color: navy;
+    position: sticky;
+    top: 0px;
+    color: white;
+}
+
+nav ul{
+    list-style-type: none;
+    display: flex;
+}
+
+nav ul li{
+    flex: 1 1 auto;
+    text-align: center;
+    position: relative;
+    margin-top: 1.89%;
+
+    
+}
+
+nav a{
+    display: block;
+    text-decoration: none;
+    color: white;
+    border: 2px solid transparent;
+    padding: 10px 0px;
+}
+
+nav a:hover{
+    color: white;
+}
+
+.sous{
+    display: none;
+    box-shadow: 0px 1px 2px #CCC;
+    background-color:navy;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
+nav > ul li:hover .sous{
+    display: flex;
+    flex-flow: column wrap;
+}
+.sous li{
+    flex: 1 1 auto;
+    text-align: left;
+}
+.sous a{
+    padding: 10px;
+    border-bottom: none;
+}
+.sous a:hover{
+    transition-property: all;
+    transition-duration: 1s;
+    border-bottom: none;
+    background-color: white;
+    color : navy;
+}
+.deroulant > a::after{
+    content:" ▼";
+    font-size: 12px;
+}
+
+.conteneur{
+  margin: 50px 20px;
+  height: 1500px;
+}
+.accueil {
+    background-color: white;
+    margin : auto;
+    margin-right : 10%;
+    border-radius: 25%;
+    padding : 1%;
+    text-decoration: none;
+}
+.accueil:hover {
+    transition-property: all;
+    transition-duration: 2s;
+    letter-spacing: 2px;
+    box-shadow: white 2px 2px 2px 5px;
+}
+.accueil a {
+    text-decoration: none;
+}
+#discovered {
+    color: navy;
+    text-align: center;
+    margin-top: 3%;
+    z-index: 2;
+}
+.reg {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15%;
+}
+.reg a {
+    display: inline-block;
+    flex-direction: row;
+    text-decoration: none;
+    font-size: 200%;
+    margin-left : 10%;
+    padding : 2%;
+
+}
+table {
+    border : 2px solid navy; 
+    border-collapse: collapse;
+    margin : auto ; 
+}
+th {
+
+    border : 2px solid navy;
 }

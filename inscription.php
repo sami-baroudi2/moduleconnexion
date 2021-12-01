@@ -94,7 +94,20 @@ if (isset($_REQUEST['login'] , $_REQUEST['nom'] , $_REQUEST['prenom'] , $_REQUES
     
 
 ?>
-
+<header>
+    <div class="accueil">
+        <a href="index.php">Accueil</a>
+    </div>
+        <nav>
+            <ul>
+              <li class="deroulant"><a href="#">Navigation &ensp;</a>
+                <ul class="sous">
+                  <li><a href="inscription.php">Inscription</a></li>
+                  <li><a href="connexion.php">Connexion</a></li>
+                </ul>
+            </ul>
+          </nav>
+    </header>
 <div class="formulaire">
     <form method="POST" action="">
         <label for="login">Login</label>
@@ -110,7 +123,7 @@ if (isset($_REQUEST['login'] , $_REQUEST['nom'] , $_REQUEST['prenom'] , $_REQUES
         <input type="password" name="password" required><br><br>
 
         <label for="password2">Confirmation</label>
-        <input type="password" name="password2" required>
+        <input type="password" name="password2" required><br><br>
 
        
 

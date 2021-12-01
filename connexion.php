@@ -9,10 +9,22 @@ session_start();//On ouvre une session
     <link rel="stylesheet" href="moduleconnexion.css">
     <title>Page de connexion</title>
 </head>
-
-
-
 <body>      
+<header>
+    <div class="accueil">
+        <a href="index.php">Accueil</a>
+    </div>
+        <nav>
+            <ul>
+              <li class="deroulant"><a href="#">Navigation &ensp;</a>
+                <ul class="sous">
+                  <li><a href="inscription.php">Inscription</a></li>
+                  <li><a href="connexion.php">Connexion</a></li>
+                </ul>
+            </ul>
+          </nav>
+    </header>
+<div class="formulaire">
 <form method="POST" action="">
         <label for="login">Login</label>
         <input type="text" name="login" required>
@@ -23,6 +35,7 @@ session_start();//On ouvre une session
 
         <input type="submit" name="submit" value="Connexion">
     </form> 
+</div>
 </body>    
 </html>
 <?php

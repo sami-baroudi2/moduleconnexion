@@ -28,8 +28,8 @@ require_once('configuration.php'); //On récupère le code de connexion à la ba
 
 
     $actuel = $Fet[0][0];//On créer une variable pour le stocker.
-
-    $post = hash('sha256' , $_POST['password']);//On fait pareil pour le mdp en $_POST , on prend le soin de les hacher aussi pour qu'ils soit identiques.
+    $PosPass = isset($_POST['password']);
+    $post = hash('sha256' , $PosPass);//On fait pareil pour le mdp en $_POST , on prend le soin de les hacher aussi pour qu'ils soit identiques.
 
 
 ?>
@@ -44,49 +44,50 @@ require_once('configuration.php'); //On récupère le code de connexion à la ba
 		<title>Profil</title>
 	</head>
 	
-	<body>
-		<div id="mainWrapper">
-			<div id="mainTitle">
+<body>
+    <header>
+    <div class="accueil">
+        <a href="index.php">Accueil</a>
+    </div>
+        <nav>
+            <ul>
+              <li class="deroulant"><a href="#">Navigation &ensp;</a>
+                <ul class="sous">
+                  <li><a href="inscription.php">Inscription</a></li>
+                  <li><a href="connexion.php">Connexion</a></li>
+                </ul>
+            </ul>
+          </nav>
+    </header>
 				<div>
-					<a href="index.php" id="title"></a>
-					<p id="discovered">Profil <?php echo $_SESSION["login"]; ?></p>
-		
+					<h1 id="discovered">Profil de <?php echo $_SESSION["login"]; ?></h1>
+                </div>
+		<div class="formulaire">
 			<form method="post" action="#">
 		
-
-				<div>
 					<label for="login">Login</label>
 					<input type="text" name="login" value="<?php echo $login?>" placeholder="admin"  required/>
-				</div>
-				
-				<div>
+			
 					<label for="prenom">Nom</label>
 					<input type="text" name="prenom"  value='<?php echo $nom ?> 'required/>
-				</div>
-
-				<div>
-					<label for="nom">Prénom</label>
-					<input type="text" name="nom"  value='<?php echo $prenom ?> 'required/>
-				</div>
-								
-				<div id="password">
-					<label for="password">Password</label>
-					<input type="password" name="password" required/>
-				</div>
 				
 
-				<div id="passwordChange">
+					<label for="nom">Prénom</label>
+					<input type="text" name="nom"  value='<?php echo $prenom ?> 'required/>
+			
+					<label for="password">Password</label>
+					<input type="password" name="password" required/>
+
 					<label for="passwordChange">New Password</label>
 					<input type="password" name="passwordChange"/>
-				</div>				
-
+		
 				<a class="aaa" href='index.php'> Accueil</a>
 				<input type="submit" value="Edit" name="submitBtn" />
-			</div>
+			
 			</form>
 		</div>
         
-	</body>
+</body>
 	
 </html>
 <?php

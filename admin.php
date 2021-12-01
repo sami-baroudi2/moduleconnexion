@@ -20,9 +20,21 @@
 	</head>
 	
 	<body>
-		<div id="mainWrapper">
-			<div id="mainTitle">
-				<a href="index.php" id="title"><h1>Vente Privé</h1></a>
+<header>
+    <div class="accueil">
+        <a href="index.php">Accueil</a>
+    </div>
+        <nav>
+            <ul>
+              <li class="deroulant"><a href="#">Navigation &ensp;</a>
+                <ul class="sous">
+                  <li><a href="inscription.php">Inscription</a></li>
+                  <li><a href="connexion.php">Connexion</a></li>
+                </ul>
+            </ul>
+          </nav>
+    </header>
+				<a href="index.php" id="title"><h1>Accueil</h1></a>
 			</div>
 <?php			
 

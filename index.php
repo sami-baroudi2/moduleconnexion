@@ -11,23 +11,39 @@ session_start();
     <title>Accueil</title>
 </head>
 <body>
+<header>
+        <form method="post" action="#">
+		<input id="decoBtn" type="submit" value="Disconnect" name="decoBtn"/>
+        </form>
+    <div class="accueil">
+        <a href="index.php">Accueil</a>
+        
+    </div>
+        <nav>
+            <ul>
+              <li class="deroulant"><a href="#">Navigation &ensp;</a>
+                <ul class="sous">
+                  <li><a href="inscription.php">Inscription</a></li>
+                  <li><a href="connexion.php">Connexion</a></li>
+                </ul>
+            </ul>
+          </nav>
+    </header>
     
 
 
 <?php
 	if(!isset($_SESSION["login"])){
 		echo '<div class=reg> <a id="connexionLink"  href="connexion.php">Login</a> 
+        
         <a id="inscriptionLink" href="inscription.php">Registration</a> </div>';				
 	}
 	else{   
-		echo '<a href="profil.php">Your Profil</a>
-        <form method="post" action="#">
-		<input id="decoBtn" type="submit" value="Disconnect" name="decoBtn"/>
-        </form>';
+		echo '<div class="reg"><a href="profil.php">Your Profil</a></div>';
 						  
 		if($_SESSION["login"] == "admin")
 		{
-		echo"<a href='admin.php' style='width:100%;'>Page Admin</a>";
+		echo"<div class ='reg'><a href='admin.php' style='width:100%;'>Page Admin</a></div>";
 		}	
 		}
 				
