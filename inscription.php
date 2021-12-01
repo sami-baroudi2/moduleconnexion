@@ -1,9 +1,9 @@
-<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="inscription" content="Formulaire d'inscription">
+    <link rel="stylesheet" href="moduleconnexion.css">
     <title>Mon formulaire d'inscription</title>
 </head>
 <body>
@@ -95,19 +95,19 @@ if (isset($_REQUEST['login'] , $_REQUEST['nom'] , $_REQUEST['prenom'] , $_REQUES
 
 ?>
 
-
+<div class="formulaire">
     <form method="POST" action="">
         <label for="login">Login</label>
-        <input type="text" name="login" required>
+        <input type="text" name="login" required> <br><br>
 
         <label for="nom">Nom</label>
-        <input type="text" name="nom" required>
+        <input type="text" name="nom" required><br><br>
 
         <label for="prenom">Prénom</label>
-        <input type="text" name="prenom" required>
+        <input type="text" name="prenom" required><br><br>
 
         <label for="password">Mot de passe</label>
-        <input type="password" name="password" required>
+        <input type="password" name="password" required><br><br>
 
         <label for="password2">Confirmation</label>
         <input type="password" name="password2" required>
@@ -115,6 +115,7 @@ if (isset($_REQUEST['login'] , $_REQUEST['nom'] , $_REQUEST['prenom'] , $_REQUES
        
 
         <input type="submit" name="submit" value="Je m'inscris !">
-    </form> 
+    </form>  
+</div>  
 </body>    
 </html>

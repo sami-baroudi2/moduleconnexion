@@ -12,9 +12,11 @@
 <html>
 
 	<head>
-		<meta charset="utf-8">
-		<link rel="stylesheet" href="../css/inscription.css">
-		<title>Vente Privé</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Administrateur" content="Page de l'administrateur">
+    <link rel="stylesheet" href="moduleconnexion.css">
+		<title>Administrateur</title>
 	</head>
 	
 	<body>

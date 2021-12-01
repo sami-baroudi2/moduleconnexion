@@ -1,13 +1,13 @@
-<?
+<?php
 session_start();//On ouvre une session
 ?>
-<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="inscription" content="Formulaire d'inscription">
-    <title>Mon formulaire d'inscription</title>
+    <meta name="Connexion" content="Page de connexion">
+    <link rel="stylesheet" href="moduleconnexion.css">
+    <title>Page de connexion</title>
 </head>
 
 
